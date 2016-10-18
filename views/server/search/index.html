@@ -1,0 +1,40 @@
+﻿<h1 class="bal_title h1">Поиск</h1>
+
+<p class="bal_text">
+	Поиск по слову: <a href="#!/search/query:запрос">/#!/search/query:запрос</a>
+</p>
+<p class="bal_text">
+	по параметрам: <a href="#!/search/query:запрос/category:auto/region:perm/what:provider/type:export/startdate:01.05.2016/enddate:31.08.2016">/#!/search/query:запрос/category:auto/region:perm/what:provider/type:export/startdate:01.05.2016/enddate:31.08.2016</a>
+</p>
+<p class="bal_text">
+	с постраничной навигацией: <a href="#!/search/query:запрос/category:auto/region:perm/what:provider/type:export/startdate:01.05.2016/enddate:31.08.2016/page:2">/#!/search/query:запрос/category:auto/region:perm/what:provider/type:export/startdate:01.05.2016/enddate:31.08.2016/page:2</a>
+</p>
+<p class="bal_text">
+	с постраничной навигацией и сортировкой: <a href="#!/search/query:запрос/category:auto/region:perm/what:provider/type:export/startdate:01.05.2016/enddate:31.08.2016/page:2/sortby:date">/#!/search/query:запрос/category:auto/region:perm/what:provider/type:export/startdate:01.05.2016/enddate:31.08.2016/page:2/sortby:date</a>
+</p>
+
+<div class="bal_accent">
+	Форма поиска
+	<div class="bal_form">
+		<input type="text" name="query"/>
+		<select name="category">
+			<option value="auto">Авто</option>
+			<option value="moto">Мото</option>
+		</select>
+		<select name="region">
+			<option value="moscow">Москва</option>
+			<option value="perm">Пермь</option>
+		</select>
+		<select name="what">
+			<option value="products">Продукция</option>
+			<option value="providers">Поставщики</option>
+		</select>
+		<div class="multiple_checkboxes" style="display: inline-block;" data-name="type">
+			<input type="checkbox" value="import" id="import"/>
+			<label for="import">Импорт</label>
+			<input type="checkbox" value="export" id="export"/>
+			<label for="export">Экспорт</label>
+		</div>
+		<button type="submit">Искать</button>
+	</div>
+</div>

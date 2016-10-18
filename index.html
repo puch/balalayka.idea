@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html class="bal_loading">
+	<head>
+
+		<meta charset="utf-8"/>
+
+		<link href="img/layout/icons/favicon.png" rel="icon" type="image/x-icon"/>
+
+		<title></title>
+
+		<link rel="stylesheet" href="css/components/balalayka.idea.css"/><!-- Balalaika.IDEA -->
+		<link rel="stylesheet" href="css/style.css"/><!-- Свои стили -->
+
+		<script src="js/components/jquery.min.js"></script><!-- JQuery -->
+
+		<script src="js/components/balalayka.idea.routing.js"></script><!-- Balalaika.IDEA, routing -->
+		<script src="js/components/balalayka.idea.core.js"></script><!-- Balalaika.IDEA, core -->
+
+		<script src="js/components/jquery.poshytip.min.js"></script><!-- Хинты -->
+
+		<script src="js/index.js"></script><!-- Скрипты, вызываемые для статичных блоков (которые не перезагружаются каждый раз при смене страницы) -->
+		<script src="js/ui.js"></script><!-- Обработка UI-элементов, вызываются на каждой странице по-новой -->
+
+	</head>
+<body>
+
+<!--
+Автор: Пучкин В., 2016.
+v.puchkin@bk.ru
+-->
+
+
+<div class="bal_loader" data-bal-role="page">
+	<div class="bal_loader__indicator"></div>
+</div>
+
+
+<div class="bal_popups_bg"></div>
+
+<div class="bal_popup" id="alert">
+	<button class="bal_popup__cross" data-bal-action="close" title="Закрыть"></button>
+	<div class="bal_title h2"></div>
+	<p class="bal_text"></p>
+</div>
+
+<include src="_shared/auth_form"></include>
+
+<include src="_shared/registration_form"></include>
+
+
+<div class="base">
+
+
+	<!-- Логотип
+	=========================================================== -->
+	<a href="#!/main" class="logo">
+		Balalayka.IDEA
+	</a>
+
+
+	<!-- Вход и регистрация
+	=========================================================== -->
+	<div class="user">
+		<div data-role="auth">
+			<div data-id="user_name"></div>
+			<a href="#!/settings" title="Настройки">Настройки</a>
+			<a data-id="exit" title="Выйти">Выйти</a>
+		</div>
+		<div data-role="anauth">
+			<a title="Регистрация" data-bal-popup="registration" class="bal_pseudolink">Регистрация</a>
+			<a title="Войти" data-bal-popup="auth" class="bal_pseudolink">Войти</a>
+		</div>
+	</div>
+
+
+	<!-- Меню
+	=========================================================== -->
+	<nav class="menu">
+		<a href="#!/main" class="menu_item">Главная</a>
+		<a href="#!/news" class="menu_item">Новости</a>
+		<a href="#!/search" class="menu_item">Поиск</a>
+		<a href="#!/sitemap" class="menu_item">Карта сайта</a>
+	</nav>
+
+
+	<!-- Контент
+	=========================================================== -->
+	<section class="content">
+		<!-- Сюда будет вставляться содержимое страниц из /views/server/ -->
+	</section>
+
+
+</div>
+
+
+</body>
+</html>

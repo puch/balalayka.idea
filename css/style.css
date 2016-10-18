@@ -1,0 +1,31 @@
+﻿/* Свои стили */
+
+
+/* Для примера */
+* { padding: 0; margin: 0; outline: none; }
+
+html { font-family: 'Arial', sans-serif; font-size: 14px; color: #000; }
+
+
+a { color: #0072C0; text-decoration: underline; }
+a:hover { cursor: pointer; text-decoration: none; }
+a.active { cursor: default; text-decoration: none; }
+
+
+.base { position: relative; width: 800px; margin: 0 auto; }
+
+
+    .logo { display: inline-block; height: 30px; margin: 20px 14px; font-size: 18px; line-height: 30px; }
+    .logo.active { cursor: default; color: #000; text-decoration: none; }
+
+
+    .user { position: absolute; top: 25px; right: 14px; height: 30px; font-size: 0; }
+        .user > div > * { display: inline-block; margin-left: 15px; font-size: 14px; }
+
+
+    .menu { display: block; font-size: 0; }
+        .menu_item { display: inline-block; vertical-align: middle; height: 30px; padding: 0 14px; font-size: 14px; line-height: 30px; }
+        .menu_item.active { color: #fff; text-decoration: none; background-color: #0072C0; }
+
+
+    .content { padding: 30px 14px; }

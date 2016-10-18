@@ -1,0 +1,435 @@
+/* Стили консоли и карты сайта для режима разработчика */
+
+
+/* Показ и скрытие блоков если вошёл и если не вошёл
+=========================================================== */
+[data-role="auth"] { display: none !important; }
+[data-role="anauth"] { display: block !important; }
+html.auth [data-role="auth"] { display: block !important; }
+html.auth [data-role="anauth"] { display: none !important; }
+
+
+/* Консоль
+=========================================================== */
+#dev_tools { position: fixed; top: 100%; right: 0; bottom: 0; width: 360px; font-size: 12px; color: #000; background-color: #fff; border: 1px solid #ccc; border-right: none; border-bottom: none; box-shadow: 0 0 20px rgba(0,0,0,0.3); visibility: hidden; opacity: 0; transition: 0.5s all; z-index: 255; }
+#dev_tools.show { top: 0; height: auto; visibility: visible; opacity: 1; }
+#dev_tools.hide { top: 100%; }
+#dev_tools:hover { z-index: 256; }
+
+    #dev_tools > button { display: block; position: fixed; right: 0; bottom: 0; width: 100px; height: 32px; font-size: 12px; color: #fff; text-align: center; background: #f03; border: 1px solid #f03; border-right: none; border-bottom: none; z-index: 10; transition: 0.2s all; }
+    #dev_tools > button:hover { cursor: pointer; box-shadow: inset 0 0 20px 20px rgba(0,0,0,0.1); }
+    #dev_tools > button:active { box-shadow: inset 0 0 20px 20px rgba(0,0,0,0.2); }
+        #dev_tools > button::after { content: 'Консоль'; }
+        #dev_tools.hide > button::after { content: 'Консоль'; }
+
+    .DT_content { position: absolute; top: 12px; right: 14px; bottom: 12px; left: 14px; overflow-y: auto; z-index: 5; }
+
+        .DT_content > h6 { display: none; margin: 0 0 10px; font-weight: normal; font-size: 12px; color: #999; }
+
+        .DT_accent { position: relative; padding: 10px; margin: 10px 0 0; font-size: 12px; word-wrap: break-word; background-color: #eee; border: 1px solid #ddd; }
+        .DT_accent:first-child { margin-top: 0; }
+            .DT_accent > b { display: block; margin-bottom: 5px; font-size: 12px; color: #000; }
+            .DT_accent > b:last-child { margin-bottom: 0; }
+            .DT_accent.green > b > span { color: #00933D; }
+            .DT_accent.red > b > span { color: #FF161F; }
+            .DT_accent > span { color: #777; }
+
+
+/* Карта сайта
+=========================================================== */
+#dev_sitemap { position: fixed; top: 100%; bottom: 0; left: 0; width: 300px; padding: 12px 14px; font-size: 12px; color: #000; background-color: #fff; border: 1px solid #ccc; border-bottom: none; border-left: none; box-shadow: 0 0 20px rgba(0,0,0,0.3); visibility: hidden; opacity: 0; transition: 0.5s all; z-index: 255; }
+#dev_sitemap.show { top: 0; height: auto; visibility: visible; opacity: 1; }
+#dev_sitemap.hide { top: 100%; }
+#dev_sitemap:hover { z-index: 256; }
+
+    #dev_sitemap a { color: #2AAAD4; }
+    #dev_sitemap a:hover { color: #FBBD09; }
+
+    #dev_sitemap > button { display: block; position: fixed; bottom: 0; left: 0; width: 100px; height: 32px; font-size: 12px; color: #fff; text-align: center; background: #0c9; border: 1px solid #0c9; border-bottom: none; border-left: none; z-index: 10; transition: 0.2s all; }
+    #dev_sitemap > button:hover { cursor: pointer; box-shadow: inset 0 0 20px 20px rgba(0,0,0,0.1); }
+    #dev_sitemap > button:active { box-shadow: inset 0 0 20px 20px rgba(0,0,0,0.2); }
+        #dev_sitemap > button::after { content: 'Карта сайта'; }
+        #dev_sitemap.hide > button::after { content: 'Карта сайта'; }
+
+    .DS_content { position: absolute; top: 12px; right: 14px; bottom: 12px; left: 14px; overflow-y: auto; z-index: 5; }
+
+        .DS_content > h6 { display: none; margin: 0 0 10px; font-weight: normal; font-size: 12px; color: #999; }
+
+        .DS_accent { position: relative; padding: 10px; margin: 10px 0 0; font-size: 12px; word-wrap: break-word; background-color: #eee; border: 1px solid #ddd; }
+        .DS_accent:first-child { margin-top: 0; }
+            .DS_accent > b { display: block; margin-bottom: 5px; font-size: 12px; color: #000; }
+            .DS_accent > b:last-child { margin-bottom: 0; }
+            .DS_accent.green > b { color: #00933D; }
+            .DS_accent.red > b { color: #FF161F; }
+            .DS_accent > span { color: #777; }
+
+            /* Для аккордиона в sitemap */
+            .DS_content {  }
+
+                .DSC_link { display: block; margin-bottom: 15px; }
+                    .DSC_link > a { display: inline-block; }
+                    .DSC_link > span { font-size: 10px; color: #999; }
+                    .DSC_link > a.active { background-color: #ffdd90; }
+
+                .DSC_item {  }
+
+                    .DSCI_title { margin-bottom: 15px; }
+                        .DSCI_title > span { color: #2AAAD4; border-bottom: 1px dashed #2AAAD4; transition: 0.2s all; }
+                        .DSC_item.open > .DCI_title > span { border-bottom-color: #004F50; color: #004F50; }
+                        .DSCI_title > span:hover,
+                        .DSC_item.open > .DCI_title > span:hover { cursor: pointer; color: #FBBD09; border-bottom-color: #FBBD09; text-shadow: none; }
+                        .DSCI_title > span:active { opacity: 0.85; }
+                        .DSCI_title > div { display: inline; font-size: 10px; color: #999; }
+
+                    .DSCI_content { padding-bottom: 2px; padding-left: 30px; transition: none; }
+
+
+/* Инклюды
+=========================================================== */
+include { display: block; }
+
+
+
+
+
+/* Компоненты UI
+=========================================================== */
+/* Стили кнопок входа и регистрации, модального окна, заголовков, текста, кнопки «назад», чекбоксов, лоадера, хинтов — всё, что используется в авторизации, регистрации, алерте плюс лоадер страницы. */
+
+
+	/* Для аккордиона в sitemap */
+	.documents_container {  }
+
+		.DC_link { display: block; margin-bottom: 15px; }
+			.DC_link > a { display: inline-block; }
+			.DC_link > span { font-size: 14px; color: #999; }
+
+		.DC_item {  }
+
+			.DCI_title { margin-bottom: 15px; }
+				.DCI_title > span { color: #2AAAD4; border-bottom: 1px dashed #2AAAD4; transition: 0.2s all; }
+				.DC_item.open > .DCI_title > span { border-bottom-color: #004F50; color: #004F50; }
+				.DCI_title > span:hover,
+				.DC_item.open > .DCI_title > span:hover { cursor: pointer; color: #FBBD09; border-bottom-color: #FBBD09; text-shadow: none; }
+				.DCI_title > span:active { opacity: 0.85; }
+				.DCI_title > div { display: inline; font-size: 14px; color: #999; }
+
+			.DCI_content { padding-bottom: 2px; padding-left: 30px; transition: none; }
+			
+			
+	/* Заголовки */
+	.bal_title { margin: 25px 0 15px; font-weight: 200; color: #000; }
+	.bal_title:first-child { margin-top: 0; }
+
+	.bal_title.h1 { font-size: 28px; }
+	.bal_title.h2 { font-size: 24px; }
+	.bal_title.h3 { font-size: 20px; }
+
+	
+	/* Абзацы текста */
+	.bal_text { margin: 15px 0; }
+	.bal_text:first-child { margin-top: 0; }
+
+
+	/* Кнопка «Назад» */
+	.bal_back { display: inline-block; height: 28px; padding: 0 12px; font-size: 14px; color: #000; text-align: center; line-height: 26px; text-decoration: none; border: 1px solid #ccc; transition: 0.2s all; }
+	.bal_back:hover { color: #000; border-color: #999; }
+	.bal_back:active { color: #000; border-color: #555; box-shadow: inset 0 0 50px 50px rgba(0,0,0,0.1); }
+	.bal_back:focus { color: #000; }
+		.bal_back > span { display: inline-block; position: relative; top: -1px; margin-right: 3px; }
+		
+		
+	/* Чекбоксы */
+	.bal_checkbox { display: inline-block; position: relative; vertical-align: top; top: 0; margin-right: 25px; transition: 0.2s all; }
+	.bal_checkbox:last-child { margin-right: 0; }
+	.bal_checkbox:hover { cursor: pointer; opacity: 0.8; }
+	.bal_checkbox:active { top: 2px; }
+		.bal_checkbox > input { display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 10; }
+		.bal_checkbox > label { display: block; position: relative; padding-left: 26px; font-size: 14px; color: #000; z-index: 5; }
+			.bal_checkbox > label::before,
+			.bal_checkbox > label::after { display: block; position: absolute; content: ' '; top: -2px; left: 0; width: 20px; height: 20px; }
+			.bal_checkbox > label::before { background-color: #fff; border: 1px solid #ccc; border-radius: 3px; transition: 0.2s all; }
+			.bal_checkbox > label::after { top: -9px; background: url(../../img/layout/icons/tick_white.png) center center no-repeat; background-size: 13px 11px; visibility: hidden; opacity: 0; transition: 0.2s all; }
+			.bal_checkbox > input:checked + label::before { background-color: #29ABE2; border-color: #29ABE2; }
+			.bal_checkbox > input:checked + label::after { top: -3px; visibility: visible; opacity: 1; }
+	
+		/* Чекбоксы: кнопками */
+		.bal_checkbox__button {  }
+
+		/* Без лэйбла */
+		.bal_checkbox.no_label { width: 16px; height: 16px; padding: 0; }
+		.bal_checkbox.big.no_label { width: 20px; height: 20px; }
+
+		/* Блоком */
+		.bal_checkbox.block { display: block; margin-top: 10px; margin-right: 0; }
+		.bal_checkbox.block:first-child { margin-top: 0; }
+
+		/* Тёмный фон */
+		.bal_checkbox.dark {  }
+			.bal_checkbox.dark > input {  }
+			.bal_checkbox.dark > label {  }
+				.bal_checkbox.dark > label::before { background-color: #002024; }
+				.bal_checkbox.dark > label::after { background-image: url(../../img/layout/icons/tick_lightgreen.png); }
+
+		/* Большой */
+		.bal_checkbox.big {  }
+			.bal_checkbox.big > label { padding-left: 28px; }
+				.bal_checkbox.big > label::before,
+				.bal_checkbox.big > label::after { top: -2px; width: 20px; height: 20px; }
+				.bal_checkbox.big > label::after { top: -6px; }
+				.bal_checkbox.big > input:checked + label::after { top: -2px; }
+
+	.bal_checkbox.no_margin_right { margin-right: 5px; }
+	.bal_checkbox.no_margin { margin: 0; }
+
+	.bal_checkbox__after_link { display: inline-block; font-size: 14px; color: #0072C0; transition: 0.2s all; }
+	.bal_checkbox__after_link:hover { cursor: pointer; color: #0072C0; text-decoration: none; opacity: 0.7; }
+	.bal_checkbox__after_link:active { color: #0072C0; opacity: 0.5; }
+
+
+	/* Псевдоссылка */
+	.bal_pseudolink { display: inline-block; vertical-align: baseline; position: relative; height: auto; padding: 0; font-size: inherit; color: #0072C0; text-decoration: none; background: none; border: none; transition: 0.2s all; }
+	.bal_pseudolink:hover { cursor: pointer; }
+	.bal_pseudolink:active { opacity: 0.75; }
+	.bal_pseudolink.baseline { vertical-align: baseline; }
+		.bal_pseudolink::after { display: block; position: absolute; content: ' '; right: 0; bottom: 0; left: 0; border-top: 1px dashed #0072C0; transition: 0.2s all; }
+		.bal_pseudolink:hover::after { bottom: -3px; opacity: 0; }
+	
+	
+	/* Модальные окна */
+	.bal_popups_bg { position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(0,0,0,0.75); visibility: hidden; opacity: 0; z-index: 253; transition: 0.3s all; }
+	.bal_popups_bg.open { visibility: visible; opacity: 1; }
+
+	.bal_popup { position: fixed; top: 50px; left: 50%; width: 512px; padding: 20px 30px 30px; margin-left: -256px; background-color: #fff; border-radius: 3px; visibility: hidden; opacity: 0; z-index: 254; transform: scale(0.5); transition: 0.3s all; }
+	.bal_popup.open { top: 90px; visibility: visible; opacity: 1; transform: scale(1); }
+		.bal_popup__cross { position: absolute; top: 0; right: 0; width: 76px; height: 76px; background: url(../../img/layout/icons/cross_black.png) center center no-repeat; background-size: 25px 25px; border: none; opacity: 0.3; transition: 0.2s all; }
+		.bal_popup__cross:hover { cursor: pointer; opacity: 0.7; }
+		.bal_popup__cross:active { opacity: 0.5; }
+
+		.bal_popup > .bal_title { padding-right: 38px; margin-top: 0; margin-bottom: 17px; }
+
+		.bal_popup > .bal_text { font-size: 16px; }
+
+		.bal_popup#auth { width: 400px; margin-left: -200px; }
+		.bal_popup#registration { width: 400px; margin-left: -200px; }
+
+	
+	/* Лоадер */
+	.bal_loader { top: 0; right: 0; bottom: 0; left: 0; visibility: hidden; opacity: 0; background-color: rgba(0,0,0,0.75); z-index: 255; transition: none; }
+		.bal_loader__indicator { position: absolute; top: 50%; left: 50%; width: 46px; height: 45px; margin: -22px 0 0 -22px; background: url(../../img/layout/logo.png) 0 0 no-repeat; background-size: 46px 45px; -moz-animation: rotate 1s infinite ease-in-out; -webkit-animation: rotate 0.4s infinite linear; -o-animation: rotate 1s infinite linear; -ms-animation: rotate 1s infinite linear; animation: rotate 1s infinite linear; }
+
+		/* Анимирование */
+		@-moz-keyframes rotate {
+		  0% {
+			-moz-transform: scale(1) perspective(120px) rotateY(0deg);
+			margin-left: -22px;
+		  }
+		  50% {
+			-moz-transform: scale(1.4) perspective(120px) rotateY(180deg);
+			margin-left: -42px;
+		  }
+		  100% {
+			-moz-transform: scale(1) perspective(120px) rotateY(360deg);
+			margin-left: -22px;
+		  }
+		}
+		@-ms-keyframes rotate {
+		  0% {
+			-ms-transform: scale(1) perspective(120px) rotateY(0deg);
+			margin-left: -22px;
+		  }
+		  50% {
+			-ms-transform: scale(1.4) perspective(120px) rotateY(180deg);
+			margin-left: -42px;
+		  }
+		  100% {
+			-ms-transform: scale(1) perspective(120px) rotateY(360deg);
+			margin-left: -22px;
+		  }
+		}
+		@-webkit-keyframes rotate {
+		  0% {
+			-webkit-transform: scale(1) perspective(120px) rotateY(0deg);
+			margin-left: -22px;
+		  }
+		  50% {
+			-webkit-transform: scale(1.4) perspective(120px) rotateY(180deg);
+			margin-left: -42px;
+		  }
+		  100% {
+			-webkit-transform: scale(1) perspective(120px) rotateY(360deg);
+			margin-left: -22px;
+		  }
+		}
+		@-o-keyframes rotate {
+		  0% {
+			-o-transform: scale(1) perspective(120px) rotateY(0deg);
+			margin-left: -22px;
+		  }
+		  50% {
+			-o-transform: scale(1.4) perspective(120px) rotateY(180deg);
+			margin-left: -42px;
+		  }
+		  100% {
+			-o-transform: scale(1) perspective(120px) rotateY(360deg);
+			margin-left: -22px;
+		  }
+		}
+		@keyframes rotate {
+		  0% {
+			transform: scale(1) perspective(120px) rotateY(0deg);
+			margin-left: -22px;
+		  }
+		  50% {
+			transform: scale(1.4) perspective(120px) rotateY(180deg);
+			margin-left: -42px;
+		  }
+		  100% {
+			transform: scale(1) perspective(120px) rotateY(360deg);
+			margin-left: -22px;
+		  }
+		}
+
+		/* Для всей страницы */
+		.bal_loader[data-bal-role="page"] { position: fixed; }
+			.bal_loader[data-bal-role="page"] .bal_loader__indicator { width: 60px; height: 60px; margin: -30px 0 0 -30px; }
+		html.bal_loading_step_1 .bal_loader[data-bal-role="page"],
+		html.bal_loading .bal_loader[data-bal-role="page"] { visibility: visible; opacity: 1; }
+		html.bal_loading_step_2 .bal_loader[data-bal-role="page"] {  }
+
+		/* Для отдельного элемента */
+		.bal_loader[data-bal-role="element"] { position: absolute; min-height: 80px; }
+			.bal_loader[data-bal-role="element"] .bal_loader__indicator { width: 40px; height: 40px; margin: -20px 0 0 -20px; }
+		.bal_loader.loading[data-bal-role="element"] { visibility: visible; opacity: 1; }
+
+
+	/* Блоки с акцентированием */
+	.bal_accent { position: relative; padding: 10px; margin: 10px 0; background-color: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.05); border-radius: 3px; }
+
+		/* Блоки с акц.: цвета */
+		.bal_accent.green {  }
+		.bal_accent.red { background-color: rgba(237,28,36,0.1); border-color: rgba(237,28,36,0.2); }
+		.bal_accent__transparent { background-color: transparent; }
+
+		/* Уменьшенный */
+		.bal_accent.small { padding: 8px 10px; margin: 0; font-size: 12px; }
+
+
+	/* Хинты (poshytip) */
+	.tip-twitter {
+		opacity:0.8;
+		z-index:1000;
+		text-align:left;
+		border-radius:4px;
+		-moz-border-radius:4px;
+		-webkit-border-radius:4px;
+		padding:8px 8px;
+		max-width:200px;
+		color:#fff;
+		background-color:#000;
+		/**
+		 * - If you set a background-image, border/padding/background-color will be ingnored.
+		 *   You can set any padding to .tip-inner instead if you need.
+		 * - If you want a tiled background-image and border/padding for the tip,
+		 *   set the background-image to .tip-inner instead.
+		 */
+		transition: none;
+	}
+	.tip-twitter * { transition: none; }
+	.tip-twitter .tip-inner {
+		font: normal 11px/14px 'open_sans', sans-serif;
+	}
+
+	/* Configure an arrow image - the script will automatically position it on the correct side of the tip */
+	.tip-twitter .tip-arrow-top {
+		margin-top:-5px;
+		margin-left:-5px; /* approx. half the width to center it */
+		top:0;
+		left:50%;
+		width:9px;
+		height:5px;
+		background:url(../../img/layout/tip-twitter_arrows.png) no-repeat;
+		visibility: visible !important;
+	}
+	.tip-twitter .tip-arrow-right {
+		margin-top:-4px; /* approx. half the height to center it */
+		margin-left:0;
+		top:50%;
+		left:100%;
+		width:5px;
+		height:9px;
+		background:url(../../img/layout/tip-twitter_arrows.png) no-repeat -9px 0;
+		visibility: visible !important;
+	}
+	.tip-twitter .tip-arrow-bottom {
+		margin-top:0;
+		margin-left:-5px; /* approx. half the width to center it */
+		top:100%;
+		left:50%;
+		width:9px;
+		height:5px;
+		background:url(../../img/layout/tip-twitter_arrows.png) no-repeat -18px 0;
+		visibility: visible !important;
+	}
+	.tip-twitter .tip-arrow-left {
+		margin-top:-4px; /* approx. half the height to center it */
+		margin-left:-5px;
+		top:50%;
+		left:0;
+		width:5px;
+		height:9px;
+		background:url(../../img/layout/tip-twitter_arrows.png) no-repeat -27px 0;
+		visibility: visible !important;
+	}
+
+
+	/* Форма регистрации */
+	.registration_form { margin-top: 27px; }
+		.RF_item { position: relative; margin-top: 18px; font-size: 0; white-space: nowrap; }
+		.RF_item:first-child { margin-top: 0; }
+
+			.RFI_separator { display: block; height: 3px; }
+
+			.RF_item > label { display: block; margin-bottom: 3px; color: #777; }
+
+			.RF_item.name > input { width: 100%; }
+			.RF_item.email > input { width: 100%; }
+			.RF_item.password > input { width: 100%; }
+			.RF_item.button > .bal_button { width: 100%; font-weight: 200; font-size: 16px; }
+			.RF_item.alert { height: 0; margin: 0; overflow: hidden; opacity: 0; transition: 0.2s all; }
+			#auth.wrong .RF_item.alert { height: auto; margin: 17px 0 0; overflow: hidden; opacity: 1; }
+
+
+/* Адаптивность
+=========================================================== */
+@media screen and (max-width: 640px)
+{
+
+	/* Модальные окна */
+	.bal_popups_bg { position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(0,0,0,0.75); visibility: hidden; opacity: 0; z-index: 253; transition: 0.3s all; }
+	.bal_popups_bg.open { visibility: visible; opacity: 1; }
+
+	.bal_popup { position: fixed; top: 100px; right: 10px; left: 10px; width: auto; padding: 20px 30px 30px; margin-left: 0; background-color: #fff; border-radius: 3px; visibility: hidden; opacity: 0; z-index: 254; transform: scale(0.5); transition: 0.3s all; }
+	.bal_popup.open { top: 10px; visibility: visible; opacity: 1; transform: scale(1); }
+		.bal_popup__cross { position: absolute; top: 0; right: 0; border: none; opacity: 0.3; transition: 0.2s all; }
+		.bal_popup__cross:hover { cursor: pointer; opacity: 0.7; }
+		.bal_popup__cross:active { opacity: 0.5; }
+
+		.bal_popup > .bal_title { margin-top: 0; margin-bottom: 17px; }
+
+		.bal_popup > .bal_text { font-size: 16px; }
+
+		.bal_popup#auth { width: auto; margin-left: 0; }
+		.bal_popup#registration { width: auto; margin-left: 0; }
+
+
+	/* Тулбар */
+	.bal_toolbar { position: relative; height: auto; margin: 10px 0 15px; }
+	.bal_toolbar.min_margin_bottom { margin-bottom: 5px; }
+	.bal_toolbar:first-child { margin-top: 0; }
+		.bal_toolbar__left,
+		.bal_toolbar__right { display: block; position: relative; top: auto; bottom: auto; }
+		.bal_toolbar__left {  }
+		.bal_toolbar__right { margin-top: 5px; }
+
+}

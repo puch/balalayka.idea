@@ -1,0 +1,30 @@
+﻿<div class="bal_popup" id="registration">
+    <button class="bal_popup__cross" data-bal-action="close" title="Закрыть"></button>
+    <div class="bal_title h2">Регистрация в системе</div>
+    <div class="registration_form">
+        <div class="RF_item name">
+            <label for="reg_name">Имя:</label>
+            <input type="text" class="bal_input" id="reg_name" title="Введите ваше имя"/>
+        </div>
+        <div class="RF_item email">
+            <label for="reg_email">Эл. почта:</label>
+            <input type="text" class="bal_input" id="reg_email" title="Введите адрес эл. почты в формате name@site.ru"/>
+        </div>
+        <div class="RF_item password">
+            <label for="reg_password">Пароль:</label>
+            <input type="password" class="bal_input" placeholder="Придумайте пароль" id="reg_password" title="Пароль должен быть не короче 4 символов"/>
+            <div class="RFI_separator"></div>
+            <input type="password" class="bal_input" placeholder="Повторите пароль" id="reg_password_repeat" title="Пароли не совпадают"/>
+        </div>
+        <div class="RF_item checkbox">
+            <div class="bal_checkbox no_margin_right">
+                <input type="checkbox" checked="checked" id="reg_accept_rules" title="Надо принять правила"/>
+                <label>Я согласен с</label>
+            </div>
+            <a href="#!/rules" class="bal_checkbox__after_link" data-bal-action="close">правилами предоставления услуг</a>
+        </div>
+        <div class="RF_item button">
+            <button class="bal_button big green" id="reg_submit">Зарегистрироваться</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+﻿<h1 class="bal_title h1">Главная</h1>
+
+<div data-role="auth">
+	<p class="bal_text">Привет, <span data-id="user_name"></span>! <a data-id="exit">Выйти</a>.</p>
+</div>
+<div data-role="anauth">
+	<p class="bal_text">Пожалуйста, <a data-bal-popup="auth" class="bal_pseudolink">войдите в систему</a> или <a data-bal-popup="registration" class="bal_pseudolink">зарегистрируйтесь</a>.</p>
+</div>
+
+<div class="bal_accent">
+	Пример поискового запроса:
+	<a href="#!/search/query:запрос/category:auto/region:perm/what:provider/type:export/startdate:01.05.2016/enddate:31.08.2016">/#!/search/query:запрос/category:auto/region:perm/what:provider/type:export/startdate:01.05.2016/enddate:31.08.2016</a>
+</div>
+
+<div class="bal_accent">
+	Если запросим страницу, которой нет в <b>js/components/balalayka.idea.routing.js</b>, получим «страница не найдена»:
+	<a href="#!/iam_not_exist">/#!/iam_not_exist</a>
+</div>
+
+<div class="bal_accent">
+	А эта страница доступна только зарегистрированным пользователям:
+	<a href="#!/settings">/#!/settings</a>
+</div>
