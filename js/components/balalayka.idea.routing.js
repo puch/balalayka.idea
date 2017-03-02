@@ -28,7 +28,7 @@ var	routing = {
 		pagonator: false,
 		sort: false,
 		enabled_for_anauth: false,
-		oages: {
+		pages: {
 
 		}
 	},
