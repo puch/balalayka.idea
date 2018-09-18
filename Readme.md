@@ -71,6 +71,10 @@ Balalayka.IDEA является библиотекой для быстрой с�
 ## Демо
 Демо 1: http://puchk.in/work/finodin/
 
-Демо 2: http://puchk.in/balalayka/idea/
+Демо 2 (без оформления): http://puchk.in/balalayka/idea/
 
-Реальная система: http://puchk.in/work/bashkortostan/
+Открытый бюджет Республики Башкортостан (пресейл): http://puchk.in/work/bashkortostan/
+
+Вексим (пресейл): http://veksim.databriz.ru
+
+Бьютимап: http://ata2.ru/
